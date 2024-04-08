@@ -14,3 +14,8 @@ const bigNumber = 354658697078463577637666663733n
 const heros = ["shaktiman", "perman", "pikachu"]
 
 console.log(typeof bigNumber);
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+// Stack (Primitive) ; Heap (Non-Primitive)
+// Stack- you get a copy; Heap- you can a ReferenceError
