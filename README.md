@@ -1,2 +1,2 @@
-# js-hindi
-A code repo for js hindi code aur chai
+# js
+A code repo for javascript
