@@ -5,9 +5,11 @@ const repoCount = 50
 
 // always use string interpolation method while concatenating strings with values.
 
+// another way to define string
 const gameName = new String("shrutiss")
 
-// console.log(gameName.__proto__);
+//to access prototype
+console.log(gameName.__proto__);
 
 // console.log(gameName.toUpperCase());
 // console.log(gameName);

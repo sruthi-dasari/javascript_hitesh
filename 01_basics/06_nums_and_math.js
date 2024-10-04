@@ -9,7 +9,7 @@ const balance = new Number(100)
 
 const otherNumber = 123.897
 
-// console.log(otherNumber.toPrecision(5));
+// console.log(otherNumber.toPrecision(5)); //we get total 5 digits as asked
 
 const hundreds = 1000000
 
@@ -19,7 +19,7 @@ const hundreds = 1000000
 
 // console.log(Math);
 // console.log(Math.abs(-4));
-// console.log(Math.round(4.3));
+// console.log(Math.round(4.7));
 // console.log(Math.ceil(4.2));
 // console.log(Math.floor(4.9));
 
@@ -30,7 +30,7 @@ const hundreds = 1000000
 const min = 10
 const max = 20
 
-console.log(Math.floor(Math.random() * (max - min + 1))+ min);
+// console.log(Math.floor(Math.random() * (max - min + 1))+ min);
 
 
 
