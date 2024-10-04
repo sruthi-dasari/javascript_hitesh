@@ -23,7 +23,7 @@ const JSUser = {
 // we can freeze objects so that values cannot be changed
 
 // Object.freeze(JSUser)
-JSUser.email = "shruti@micro.com"
+// JSUser.email = "shruti@micro.com"
 // console.log(JSUser);
 
 // how to add functions in our object
@@ -32,11 +32,14 @@ JSUser.greeting = function(){
     console.log("Hello js user!");
 }
 
+// console.log(JSUser);
+
+
 JSUser.greetingTwo = function(){
     console.log(`Hello js ${this.name}!`); // we can add values inside string using this syntax (string interpolation)
     // we can use "this" here to refer keys of same object 
 }
 
 // console.log(JSUser.greeting); //here we are printing only function reference
-JSUser.greeting(); //here we are printing function definition
+// JSUser.greeting(); //here we are printing function definition
 JSUser.greetingTwo();
