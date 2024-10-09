@@ -1,12 +1,12 @@
 // global scope
-var c = 300
+// var c = 300
 
 // block scope
-if(true){
-    let a = 10
-    const b = 20
-    var c = 30
-} // whatever we declare in block scope, these should not come out of it
+// if(true){
+//     let a = 10
+//     const b = 20
+//     var c = 30
+// } // whatever we declare in block scope, these should not come out of it
 
 // a nd b will not print, since value doesnt exist out of scope
 // console.log(a); 
@@ -18,13 +18,13 @@ if(true){
 
 // ************************* Mini hoisting******************************
 
-addOne(5) 
-function addOne(num){ // this type of function declare can run this code
-    return num+1 
-}
+// console.log( addOne(5) );
+// function addOne(num){ // this type of function declare can run this code
+//     return num+1 
+// }
 
 
-// addTwo(6) 
-const addTwo = function(num){ //but this type cannot (function where ur holding it in variable)
-    return num+2
-}
+// console.log( addTwo(6) );
+// const addTwo = function(num){ //but this type cannot (function where ur holding it in variable)
+//     return num+2
+// }
