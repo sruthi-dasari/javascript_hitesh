@@ -1,3 +1,4 @@
+// while and do while loops
 
 let index = 0
 // while (index <= 10) {

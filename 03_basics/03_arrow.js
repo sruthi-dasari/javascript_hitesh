@@ -40,7 +40,7 @@
 //     console.log(this.username); 
 // }
 
-chai()
+// chai()
 
 // ***** more on arrow functions*******
 
@@ -54,6 +54,9 @@ chai()
 
 // if you want to return just a value, you can wrap it in paranthesis (if curly braces are used then return is compulsory)
 // const addTwo = (num1, num2) => (num1+num2)
+
+//like this
+// const addTwo = (num1, num2) => {return (num1+num2)}
 
 // but if want to return an object, you should wrap it in paranthesis
 // const addTwo = (num1, num2) => ({username: "shruti"})
