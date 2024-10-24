@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style = "background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style = "color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+   <script>
+    // one of the approach to apply click event is to use onclick
+
+    //second approach (this is ok, but it gives less features)
+    // document.getElementById("owl").onclick = (function(){
+    //     alert("owl clicked")
+    // })
+
+    //third approach (this is best approach)
+    // document.getElementById("owl").addEventListener('click', function(){
+    //     alert("owl clicked again")
+    // })
+
+    //other approaches
+    //this was used earlier, in internet explorer time
+    // attachEvent()
+    // jQuery - onEvent() was used here
+
+    // learn these 
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    //event propagation - bubbling and capturing mode
+
+    // document.getElementById("images").addEventListener('click', function(){
+    //     console.log("clicked inside the ul")
+    // }, false)
+
+    // document.getElementById("owl").addEventListener('click', function(){
+    //     console.log("owl clicked")
+    // }, false)
+
+    // when false is given, its bubbling, means, it goes from low to top (image reacts first then ul)
+    // when true is given, its called capturing mode, here it goes from top to low
+
+    //e.stopPropagation()
+    // when this is used then event does not bubble up, means it doesn't go up (hence only owl message gets printed)
+
+    // document.getElementById("images").addEventListener('click', function(){
+    //     console.log("clicked inside the ul")
+    // }, false)
+
+    // document.getElementById("owl").addEventListener('click', function(e){
+    //     console.log("owl clicked")
+    //     e.stopPropagation()
+    // }, false)
+
+    // prevent default
+    // document.getElementById("google").addEventListener('click', function(e){
+    //     console.log("google clicked")
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    // })
+
+    // removing elements
+
+    // document.querySelector("#images").addEventListener('click', function(e){
+    //     console.log(e.target.parentNode)
+    //     let removeIt = e.target.parentNode
+    //     removeIt.remove()
+    //     // this is another approach, but its confusing 
+    //     // removeIt.parentNode.removeChild(removeIt)
+    // })
+
+    // but if we use above approach, there's a problem, if we click on google, everything gets removed, since its li element and its parent is ul
+    // to avoid this problem, we can add checks
+
+    document.querySelector("#images").addEventListener('click', function(e){
+        console.log(e.target.parentNode)
+        console.log(e.target.tagName)
+        if(e.target.tagName === "IMG"){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    })
+
+   </script>
+</body>
+</html>
+
