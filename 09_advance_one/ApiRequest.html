@@ -5,11 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style = "background-color: #212121;">
+<style>
+    .card{
+        /* height: 100px;
+        width: 100px; */
+        margin: 10px;
+    }
+    .image1{
+        height: 200px;
+        width: 200px;
+    }
+</style>
+<body style = "background-color: #212121; color: aliceblue;">
+    // xhr client is in one of the following states of ready state:
     0	UNSENT	Client has been created. open() not called yet.
     1	OPENED	open() has been called.
     2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
     3	LOADING	Downloading; responseText holds partial data.
     4	DONE	The operation is complete.
+
+    <div class="card">
+        <img src = "img_avatar.png"  class = "image1" alt = "profile picture"/>
+        <div class="container">
+            <h4>Name, followers</h4>
+            <p>Bio, Blog</p>
+        </div>
+    </div>
 </body>
+<script>
+
+    // // assignment code starts here
+    // const card = document.querySelector(".card")
+    // const image = document.querySelector('img')
+    // const nameFol = document.querySelector('h4')
+    // const bioBlog = document.querySelector('p')
+    // // assignment code pauses here
+    
+
+    // sending xml request (AJAX request)
+
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary"
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestUrl)
+
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+            
+            // // assignment code continues
+            // image.setAttribute("src", `${data.avatar_url}`)
+            // nameFol.innerHTML = `Name: ${data.name}, Followers: ${data.followers}`
+            // bioBlog.innerHTML = `Bio: ${data.bio},  Blog: ${data.blog}`
+            // // assignment code ends here
+
+        console.log(data);
+    }
+    }
+    xhr.send()
+
+</script>
 </html>
