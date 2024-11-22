@@ -72,17 +72,17 @@
 
 // fifth example
 
-const promiseFive = new Promise(function(resolve, reject){
-    setTimeout(function(){
-        let error = true
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true
 
-        if(!error){
-            resolve({username:"javascript", password:"123"})
-        }else{
-            reject("ERROR: JS went wrong !!!")
-        }
-    }, 1000)
-})
+//         if(!error){
+//             resolve({username:"javascript", password:"123"})
+//         }else{
+//             reject("ERROR: JS went wrong !!!")
+//         }
+//     }, 1000)
+// })
 
 // // this is one way
 // async function consumePromiseFive(){
@@ -96,15 +96,46 @@ const promiseFive = new Promise(function(resolve, reject){
 // output, it shows that error has not been handled properly with catch
 
 // //this is another way
-async function consumePromiseFive(){
-    try{
-        const response = await promiseFive
-        console.log(response); 
-    }catch(error){
-        console.log(error);
-    }
-}
+// async function consumePromiseFive(){
+//     try{
+//         const response = await promiseFive
+//         console.log(response); 
+//     }catch(error){
+//         console.log(error);
+//     }
+// }
 
-consumePromiseFive()
+// consumePromiseFive()
 
 // here we can see that, by using try catch block we can handle errors gracefully.
+
+
+// handling json data
+
+//using try catch method
+
+// async function getAllUsers(){
+//     try{
+//         const response = await fetch("https://jsonplaceholder.typicode.com/users")
+//         const data = await response.json()
+//         console.log(data);
+//     }
+//     catch(error){
+//         console.log("E:", error);
+//     }
+// }
+
+// getAllUsers()
+
+//using .then catch format
+
+fetch("https://jsonplaceholder.typicode.com/users")
+.then((response)=>{
+    return response.json()
+})
+.then((data) => console.log(data)
+)
+.catch((error) => console.log(error)
+)
+
+// in the above format, we dont need to wait, since after first then completes then only it goes to next then
