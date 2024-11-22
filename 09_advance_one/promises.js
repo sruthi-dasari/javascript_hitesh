@@ -139,3 +139,21 @@ fetch("https://jsonplaceholder.typicode.com/users")
 )
 
 // in the above format, we dont need to wait, since after first then completes then only it goes to next then
+
+// we can see one thing here, if we dont comment the other promises and run them also along with fetch
+// method, we can see that the fetch executes first, and the other methods execute later. 
+// We will discuss about this in next lecture.
+
+// fetch in js
+
+// So why this happens is because:
+// if you remember the diagram which was discussed earlier that how callstack happens,
+// we saw that functions execute in LIFO manner (refer the diagram to understand better).
+// We also saw that there are some special functions which call settimeout which make web api requests,
+// so these callbacks get stored in a queue (task queue), and they also execute in LIFO manner, when time
+// comes.
+// But with case of fetch, its different, here the callbacks gets stored in special queue known as
+// microtask queue or priority queue (assume like VIP queue).
+// So here the callbacks doesnt wait, and simply gets priority and executes first. (even if both
+// callbacks have same time limit)
+// Therefore we can see that fetch functions executes before any other functions.
