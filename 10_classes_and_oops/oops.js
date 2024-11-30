@@ -18,7 +18,7 @@
 
 // constructor functions
 
-// If we want to create another user, instead to writing it again and changing values,
+// If we want to create another user, instead of writing it again and changing values,
 // we use constructor functions
 
 function User(username, loginCount, isLoggedIn){
